@@ -1,7 +1,7 @@
 import { test, expect, Page } from '@playwright/test';
 
 const STAKING_UNIT = 32;
-const ASSET_NAME = 'ETH ETH 14,132.60';
+const ASSET_NAME = 'ETH ETH 1';
 
 // Helper: Extract numeric value from text
 async function extractNumber(text: string): Promise<number> {
@@ -33,16 +33,14 @@ test.describe('Kiln Widget - Earning MAX ETH', () => {
 
         // 3. Select ETH
         await page.locator('[data-test="widget_earn_select_asset_dropdown_trigger"]').click();
+        //await page.getByRole('button', { name: 'ETH' }).nth(1).click();
         await page.getByRole('button', { name: new RegExp(ASSET_NAME) }).click();
-        //await page.getByRole('button', { name: 'ETH' }).nth(1).click(); works in debug mode only
-        //as there are 2 buttons with the same name I had to do it like this and specify the second element with the same name
 
         // 4. Click on MAX
         await page.locator('[data-test="widget_earn_input_max_button"]').click();
 
         // 5. Check displayed value is a multiple of 32
         const numericValue = await getNumericValue(page, '0.00');
-        //no data-test id, so I had to go with the placeholder atribute
         expect(numericValue % STAKING_UNIT).toBe(0);
         console.log('Displayed value:', numericValue);
 

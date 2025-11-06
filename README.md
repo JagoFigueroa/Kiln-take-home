@@ -17,6 +17,7 @@ This repository contains an automated test for the Kiln widget.
 - Uses helper functions for numeric extraction and validation
 - Includes console logs for additional visibility during test execution
 - Added comments for clarity
+- For the ETH element, as there are 2 buttons with the same name, I had to do a a bit of a workaround. An specific data.test to differenciate them would be optimal
 
 ## How to Run
 
