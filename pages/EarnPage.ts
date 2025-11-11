@@ -2,7 +2,7 @@ import { Page } from '@playwright/test';
 import { extractNumber, getNumericValue } from '../helpers/numericHelpers';
 
 export class EarnPage {
-  constructor(private page: Page) {}
+  constructor(private page: Page) { }
 
   async open(baseUrl: string) {
     await this.page.goto(`${baseUrl}/overview`);
