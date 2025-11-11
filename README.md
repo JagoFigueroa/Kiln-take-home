@@ -13,12 +13,17 @@ This repository contains an automated test for the Kiln widget.
 
 ## Implementation notes
 
-## How to Run
+- Written using Playwright with TypeScript
+- Includes console logs to improve visibility during test execution
+
+## Setup
 
 1. Clone this repository: `git clone https://github.com/JagoFigueroa/Kiln-take-home.git`
    
-2. Navigate to the directory containing the test: `cd tests`
+2. Navigate to the project directory: `cd Kiln‑take‑home`
 
 3. Install dependencies: `npm install`
 
-4. Run the test: `npm run test` (or `npx playwright test`)
+## Running the test
+
+`npm run test (or npx playwright test)`
